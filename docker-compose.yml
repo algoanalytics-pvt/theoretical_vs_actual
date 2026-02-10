@@ -1,0 +1,11 @@
+version: '3' # update to version 2 for ubuntu 16.04
+services:
+  quotes_processor_sorting:
+    build:
+      context: .
+    container_name: theoretical_vs_actual_dashboard
+    image: theoretical_vs_actual_dashboard
+    ports:
+      - '9266:8507'
+   
+    restart: always
