@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 GA_ID = "G-8DM8073S27"
 
 # ── People to exclude (add IPs of developers/testers) ──
-EXCLUDED_IPS  = 103.148.120.152
+EXCLUDED_IPS  = ["103.148.120.152"]
 
 
 def _get_ip() -> str:
