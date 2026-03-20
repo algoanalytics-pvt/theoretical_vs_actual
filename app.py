@@ -1513,7 +1513,7 @@ class DashboardApp:
         st.set_page_config(page_title="Theoretical vs Actual", layout="wide", page_icon="🏭")
         st.title("Theoretical vs Actual Calculator")
         st.markdown("---")
-        load_ga("Theoretical_vs_Actual")
+        # load_ga("Theoretical_vs_Actual")
     
     def display_metrics(self, metrics, hierarchy_info):
         """Display key metrics"""
@@ -1605,6 +1605,7 @@ class DashboardApp:
                 sheet_index = 0
             
             if st.button("🚀 Process File", type="primary", use_container_width=True):
+                track_event("feature_used", "Theoretical_vs_Actual", "Process_File")
                 try:
                     with st.spinner("⏳ Processing your file..."):
                         progress_bar = st.progress(0)
@@ -1655,6 +1656,8 @@ class DashboardApp:
                             type="primary",
                             use_container_width=True
                         )
+                        track_event("feature_used", "Theoretical_vs_Actual", "Download_Output")
+
                         
                 except Exception as e:
                     st.error(f"❌ An error occurred: {str(e)}")
